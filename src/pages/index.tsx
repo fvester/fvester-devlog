@@ -1,7 +1,7 @@
 import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
 import { Canvas } from "@react-three/fiber"
-import "./index.scss"
+import "@/pages/index.scss"
 
 const IndexPage: React.FC<PageProps> = () => {
   return (

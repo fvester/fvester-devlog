@@ -1,4 +1,5 @@
 import type { GatsbyConfig } from "gatsby";
+import path from "path";
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -18,6 +19,15 @@ const config: GatsbyConfig = {
           silenceDeprecations: ['legacy-js-api'], // If getsby config version upgrade, has to change
         },
       },
+    },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          "@": path.resolve(__dirname, "src")
+        },
+        extensions: []
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
