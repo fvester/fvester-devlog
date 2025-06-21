@@ -10,7 +10,15 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
-    "gatsby-plugin-sass", 
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        sassOptions: {
+          api: "modern",
+          silenceDeprecations: ['legacy-js-api'], // If getsby config version upgrade, has to change
+        },
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -19,7 +27,7 @@ const config: GatsbyConfig = {
       },
     },
     `gatsby-transformer-remark`,
-    "gatsby-plugin-webpack-bundle-analyser-v2",
+    "gatsby-plugin-webpack-bundle-analyser-v2"
   ]
 };
 
