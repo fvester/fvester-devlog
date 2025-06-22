@@ -12,7 +12,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "formatting": "prettier --write \"src/**/*.{ts,tsx,json,md}\""
   },
   "dependencies": {
     "@react-three/fiber": "8.17.10",
@@ -32,6 +33,7 @@
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.32",
+    "prettier": "^3.5.3",
     "typescript": "^5.3.3"
   }
 }
