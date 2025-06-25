@@ -11,6 +11,8 @@ import * as THREE from 'three';
 import React from 'react';
 import { useGLTF } from '@react-three/drei';
 import { GLTF } from 'three-stdlib';
+import { Bird } from './Bird';
+import { degToRad } from 'three/src/math/MathUtils';
 
 type ActionName = 'Animation';
 
@@ -90,6 +92,8 @@ export function Desk(props: JSX.IntrinsicElements['group']) {
         geometry={nodes.Object_14.geometry}
         material={materials.comp_desk_top}
       />
+
+      {/* Add desk objects */}
     </group>
   );
 }
