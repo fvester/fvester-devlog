@@ -14,6 +14,8 @@ import { GLTF } from 'three-stdlib';
 import { PointLightHelper } from 'three';
 import { useThree } from '@react-three/fiber';
 import { Leva, useControls } from 'leva';
+import LampBeam from './LampBeam';
+import { degToRad } from 'three/src/math/MathUtils';
 
 type ActionName = 'Animation';
 
@@ -57,7 +59,7 @@ type Lamp1Props = JSX.IntrinsicElements['group'] & {
 export function Lamp1({ debug = false, ...props }: Lamp1Props) {
   // Debug settings
   const { lightIntensityLv } = useControls({
-    lightIntensityLv: { value: 300, min: 0, max: 600, step: 1 },
+    lightIntensityLv: { value: 400, min: 0, max: 2000, step: 1 },
   });
 
   // Real Features setting
@@ -129,25 +131,33 @@ export function Lamp1({ debug = false, ...props }: Lamp1Props) {
       {/* Lamp pointlight */}
       <pointLight
         ref={pointlightRef}
-        intensity={debug ? lightIntensityLv : lightIntensity}
+        intensity={debug ? lightIntensityLv / 20 : lightIntensity / 20}
         distance={3}
         decay={2}
-        color="orange"
+        color="#FCEFCB"
         position={[3.9, 10.4, 0]}
       />
 
       {/* Lamp spotlight */}
       <spotLight
-        color="white"
+        color="#FCEFCB"
         ref={spotlightRef}
         position={[3.9, 10.4, 0]}
-        angle={Math.PI / 4}
+        angle={degToRad(55)}
         penumbra={0.5}
         intensity={debug ? lightIntensityLv : lightIntensity}
         castShadow
         distance={0}
-        target-position={[15, 0, 0]}
+        target-position={[0, 0, 0]}
         shadow-normalBias={0.1}
+      />
+
+      <LampBeam
+        intensity={debug ? lightIntensityLv : lightIntensity}
+        length={12}
+        angle={17}
+        position={[3.9, 10.4, 0]}
+        rotation={[0, 0, degToRad(43)]}
       />
 
       {/* Pedestal */}
