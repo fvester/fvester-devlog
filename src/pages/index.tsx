@@ -26,7 +26,7 @@ const IndexPage: React.FC<PageProps> = () => {
         /> */}
 
         {/* Models */}
-        <Lamp1 castShadow />
+        <Lamp1 debug={true} position={[-15, 0, 0]} />
         <mesh rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
           <planeGeometry args={[100, 100]} />
           <meshStandardMaterial color="#888888" metalness={1} roughness={0.8} />

@@ -8,11 +8,12 @@ Title: Office's Lamp
 */
 
 import * as THREE from 'three';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useGLTF, useHelper } from '@react-three/drei';
 import { GLTF } from 'three-stdlib';
 import { PointLightHelper } from 'three';
 import { useThree } from '@react-three/fiber';
+import { Leva, useControls } from 'leva';
 
 type ActionName = 'Animation';
 
@@ -49,7 +50,19 @@ type GLTFResult = GLTF & {
   animations: GLTFAction[];
 };
 
-export function Lamp1(props: JSX.IntrinsicElements['group']) {
+type Lamp1Props = JSX.IntrinsicElements['group'] & {
+  debug?: boolean;
+};
+
+export function Lamp1({ debug = false, ...props }: Lamp1Props) {
+  // Debug settings
+  const { lightIntensityLv } = useControls({
+    lightIntensityLv: { value: 200, min: 0, max: 400, step: 1 },
+  });
+
+  // Real Features setting
+  const [lightIntensity, setLightIntensity] = useState<number>(200);
+
   // Model load
   const { nodes, materials } = useGLTF(
     '/models/offices_lamp/scene.glb',
@@ -81,6 +94,9 @@ export function Lamp1(props: JSX.IntrinsicElements['group']) {
 
   return (
     <group {...props} dispose={null}>
+      {/* Debug */}
+      {!debug && <Leva hidden={true} />}
+
       {/* Bulb */}
       <group
         position={[3.785, 10.589, 0]}
@@ -113,7 +129,7 @@ export function Lamp1(props: JSX.IntrinsicElements['group']) {
       {/* Lamp pointlight */}
       <pointLight
         ref={pointlightRef}
-        intensity={50}
+        intensity={debug ? lightIntensityLv : lightIntensity}
         distance={5}
         decay={2}
         color="orange"
@@ -127,7 +143,7 @@ export function Lamp1(props: JSX.IntrinsicElements['group']) {
         position={[3.9, 10.4, 0]}
         angle={Math.PI / 4}
         penumbra={0.5}
-        intensity={100}
+        intensity={debug ? lightIntensityLv : lightIntensity}
         castShadow
         distance={0}
         target-position={[15, 0, 0]}
