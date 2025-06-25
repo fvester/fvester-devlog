@@ -57,7 +57,7 @@ type Lamp1Props = JSX.IntrinsicElements['group'] & {
 export function Lamp1({ debug = false, ...props }: Lamp1Props) {
   // Debug settings
   const { lightIntensityLv } = useControls({
-    lightIntensityLv: { value: 200, min: 0, max: 400, step: 1 },
+    lightIntensityLv: { value: 300, min: 0, max: 600, step: 1 },
   });
 
   // Real Features setting
@@ -130,7 +130,7 @@ export function Lamp1({ debug = false, ...props }: Lamp1Props) {
       <pointLight
         ref={pointlightRef}
         intensity={debug ? lightIntensityLv : lightIntensity}
-        distance={5}
+        distance={3}
         decay={2}
         color="orange"
         position={[3.9, 10.4, 0]}
@@ -138,7 +138,7 @@ export function Lamp1({ debug = false, ...props }: Lamp1Props) {
 
       {/* Lamp spotlight */}
       <spotLight
-        color="orange"
+        color="white"
         ref={spotlightRef}
         position={[3.9, 10.4, 0]}
         angle={Math.PI / 4}
@@ -147,6 +147,7 @@ export function Lamp1({ debug = false, ...props }: Lamp1Props) {
         castShadow
         distance={0}
         target-position={[15, 0, 0]}
+        shadow-normalBias={0.1}
       />
 
       {/* Pedestal */}
@@ -233,4 +234,4 @@ export function Lamp1({ debug = false, ...props }: Lamp1Props) {
   );
 }
 
-useGLTF.preload('@/models/offices_lamp/scene.glb');
+useGLTF.preload('/models/offices_lamp/scene.glb');
