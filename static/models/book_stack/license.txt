@@ -1,0 +1,11 @@
+Model Information:
+* title:	Stack of Books 3D scan
+* source:	https://sketchfab.com/3d-models/stack-of-books-3d-scan-975887dad9a2474bacb9fec3850c48c5
+* author:	grafi (https://sketchfab.com/zdenkoroman)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Stack of Books 3D scan" (https://sketchfab.com/3d-models/stack-of-books-3d-scan-975887dad9a2474bacb9fec3850c48c5) by grafi (https://sketchfab.com/zdenkoroman) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

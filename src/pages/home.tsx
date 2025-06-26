@@ -15,7 +15,7 @@ const Home: React.FC = () => {
     <div className="home">
       <Canvas shadows>
         {/* helpers */}
-        {/* <Perf /> */}
+        <Perf />
         {/* <axesHelper scale={[5, 5, 5]} /> */}
 
         {/* Controls */}
