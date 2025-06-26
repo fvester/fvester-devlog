@@ -105,10 +105,11 @@ export function Lamp1({ debug = false, ...props }: Lamp1Props) {
         rotation={[0, 0, 0.628]}
         scale={0.432}
       >
-        <mesh
+        {/* Too many drawcalls */}
+        {/* <mesh
           geometry={nodes.Object_24.geometry}
           material={materials['Material.004']}
-        />
+        /> */}
         <mesh
           geometry={nodes.Object_25.geometry}
           material={materials['Material.005']}

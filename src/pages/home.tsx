@@ -4,18 +4,18 @@ import { Canvas } from '@react-three/fiber';
 import '@/pages/index.scss';
 import { Lamp1 } from '@/glb_components/Lamp1';
 import { OrbitControls } from '@react-three/drei';
-import { DeskSetup } from '@/glb_components/DeskSetup';
 import { EffectComposer, Noise, Vignette } from '@react-three/postprocessing';
 import { Bird } from '@/glb_components/Bird';
 import { degToRad } from 'three/src/math/MathUtils';
 import WorkSpace from '@/3dcomponents/WorkSpace';
-import { DoubleSide, NoBlending } from 'three';
+import { Perf } from 'r3f-perf';
 
 const Home: React.FC = () => {
   return (
     <div className="home">
       <Canvas shadows>
         {/* helpers */}
+        <Perf />
         {/* <axesHelper scale={[5, 5, 5]} /> */}
 
         {/* Controls */}
