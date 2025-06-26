@@ -2,13 +2,14 @@ import * as React from 'react';
 import type { HeadFC, PageProps } from 'gatsby';
 import { Canvas } from '@react-three/fiber';
 import '@/pages/index.scss';
-import { Lamp1 } from '@/3dcomponents/Lamp1';
+import { Lamp1 } from '@/glb_components/Lamp1';
 import { OrbitControls } from '@react-three/drei';
-import { DeskSetup } from '@/3dcomponents/DeskSetup';
-import { Desk } from '@/3dcomponents/Desk';
+import { DeskSetup } from '@/glb_components/DeskSetup';
 import { EffectComposer, Noise, Vignette } from '@react-three/postprocessing';
-import { Bird } from '@/3dcomponents/Bird';
+import { Bird } from '@/glb_components/Bird';
 import { degToRad } from 'three/src/math/MathUtils';
+import WorkSpace from '@/3dcomponents/WorkSpace';
+import { DoubleSide, NoBlending } from 'three';
 
 const Home: React.FC = () => {
   return (
@@ -38,7 +39,7 @@ const Home: React.FC = () => {
           rotation={[0, degToRad(90), 0]}
         />
         {/* <DeskSetup /> */}
-        <Desk />
+        <WorkSpace />
         <mesh rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
           <planeGeometry args={[500, 500]} />
           <meshStandardMaterial color="#888888" metalness={1} roughness={0.8} />

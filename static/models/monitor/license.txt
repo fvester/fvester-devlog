@@ -1,0 +1,11 @@
+Model Information:
+* title:	Acer monitor
+* source:	https://sketchfab.com/3d-models/acer-monitor-07debcacbbec408faa54f61097bf3881
+* author:	vesicalsnail (https://sketchfab.com/milansaman21)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Acer monitor" (https://sketchfab.com/3d-models/acer-monitor-07debcacbbec408faa54f61097bf3881) by vesicalsnail (https://sketchfab.com/milansaman21) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
