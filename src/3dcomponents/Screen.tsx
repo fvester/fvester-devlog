@@ -14,7 +14,7 @@ export function Screen(props: JSX.IntrinsicElements['group']) {
       <Html
         className="screen"
         transform
-        distanceFactor={0.595}
+        distanceFactor={0.61}
         occlude={'blending'}
       >
         <iframe src="https://inpa.tistory.com/" />

@@ -15,7 +15,7 @@ const Home: React.FC = () => {
     <div className="home">
       <Canvas shadows>
         {/* helpers */}
-        <Perf />
+        {/* <Perf /> */}
         {/* <axesHelper scale={[5, 5, 5]} /> */}
 
         {/* Controls */}
@@ -23,7 +23,7 @@ const Home: React.FC = () => {
 
         {/* Lights */}
         <directionalLight position={[-3, 3, 3]} intensity={0.5} />
-        {/* <ambientLight intensity={1} color="#ffffff" /> */}
+        <ambientLight intensity={0.2} color="#ffffff" />
         {/* <pointLight
           intensity={50}
           distance={0}
