@@ -17,7 +17,7 @@ const WorkSpace = (props: JSX.IntrinsicElements['group']) => {
           scale={[3.3, 3.3, 3.3]}
           rotation={[0, degToRad(180), 0]}
         />
-        {/* <Screen position={[0, 6.75, -1.45]} rotation={[degToRad(-0.4), 0, 0]} /> */}
+        <Screen position={[0, 6.75, -1.45]} rotation={[degToRad(-0.4), 0, 0]} />
       </group>
       <BookStack position={[-3, 3.2, 0]} scale={[3, 3, 3]} />
     </group>
